@@ -26,7 +26,7 @@ public class TesteCavaloPreguicaCachorro {
 				"Para fazer exercicios o cavalo deve correr",
 				"marrom", "Não cruzou", 88);
 		
-		Preguica preg = new Preguica("Lana", 4, "Nyan", 4, "Nula", "Folhas", "A preguiça não corre",
+		Preguica preg = new Preguica("Lana", 4, "Nyan", 4, "Nula", "Folhas", "A preguiça não corre, ela costuma subir em arvores",
 				"Acizentados", 2, "Sedentária", "A preguiça anda lentamente");
 		
 
