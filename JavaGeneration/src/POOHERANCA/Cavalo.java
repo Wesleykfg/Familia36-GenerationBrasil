@@ -6,10 +6,10 @@ public class Cavalo extends Animal{
 	private String cruzou;
 	private int velocidade;
 	
-	public Cavalo (String nome, int idade, String emitirSom, int quantPatas, String periculosidade,
+	public Cavalo (String nome, int idade, int quantPatas, String periculosidade,
 			String alimentacao, String deveCorrer, String pelos,String cruzou, int velocidade)
 	{
-		super (nome, idade, emitirSom, quantPatas, periculosidade, alimentacao);
+		super (nome, idade, quantPatas, periculosidade, alimentacao);
 		this.deveCorrer = deveCorrer;
 		this.pelos = pelos;
 		this.cruzou = cruzou;
@@ -48,7 +48,11 @@ public class Cavalo extends Animal{
 	public void setVelocidade(int velocidade) {
 		this.velocidade = velocidade;
 	}
-	
+	@Override
+	public String emitirSom()
+	{
+		return "Hiin in in";
+	}
 	
 
 

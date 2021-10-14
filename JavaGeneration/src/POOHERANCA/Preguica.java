@@ -7,10 +7,10 @@ public class Preguica extends Animal{
 	private String condFisico;
 	private String movimentacao;
 	
-	public Preguica (String nome, int idade, String emitirSom, int quantPatas, String periculosidade,
+	public Preguica (String nome, int idade, int quantPatas, String periculosidade,
 			String alimentacao, String deveCorrer, String pelos, int quantGarras, String condFisico, String movimentacao)
 	{
-		super (nome, idade, emitirSom, quantPatas, periculosidade, alimentacao);
+		super (nome, idade, quantPatas, periculosidade, alimentacao);
 		this.deveCorrer = deveCorrer;
 		this.pelos = pelos;
 		this.quantGarras = quantGarras;
@@ -58,7 +58,11 @@ public class Preguica extends Animal{
 	public void setMovimentacao(String movimentacao) {
 		this.movimentacao = movimentacao;
 	}
-	
+	@Override
+	public String emitirSom()
+	{
+		return "Nyan...";
+	}
 	
 	
 }

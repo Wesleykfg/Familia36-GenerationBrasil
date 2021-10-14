@@ -7,6 +7,7 @@ public class Animal {
 	private int quantdePatas;
 	private String periculosidade;
 	private String alimentacao;
+	private String deveCorrer;
 	
 	public Animal (String nome, int idade, String emitirSom, int quantPatas, String periculosidade, String alimentacao)
 	{
@@ -17,6 +18,15 @@ public class Animal {
 		this.periculosidade = periculosidade;
 		this.alimentacao = alimentacao;
 	}
+	public Animal (String nome, int idade, int quantPatas, String periculosidade, String alimentacao)
+	{
+		this.nome = nome;
+		this.idade = idade;
+		this.quantdePatas = quantPatas;
+		this.periculosidade = periculosidade;
+		this.alimentacao = alimentacao;
+	}
+
 
 	public String getNome() {
 		return nome;
@@ -34,13 +44,7 @@ public class Animal {
 		this.idade = idade;
 	}
 
-	public String getEmitirSom() {
-		return emitirSom;
-	}
 
-	public void setEmitirSom(String emitirSom) {
-		this.emitirSom = emitirSom;
-	}
 
 	public int getQuantdePatas() {
 		return quantdePatas;
@@ -65,7 +69,19 @@ public class Animal {
 	public void setAlimentacao(String alimentacao) {
 		this.alimentacao = alimentacao;
 	}
-	
+
+	public String getDeveCorrer() {
+		return deveCorrer;
+	}
+
+	public void setDeveCorrer(String deveCorrer) {
+		this.deveCorrer = deveCorrer;
+	}
+	public String emitirSom() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }

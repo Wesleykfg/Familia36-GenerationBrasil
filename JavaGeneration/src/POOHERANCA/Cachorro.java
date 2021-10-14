@@ -6,10 +6,10 @@ public class Cachorro extends Animal{
 	private String castrado;
 	private String raca;
 	
-	public Cachorro (String nome, int idade, String emitirSom, int quantPatas, String periculosidade,
+	public Cachorro (String nome, int idade, int quantPatas, String periculosidade,
 			String alimentacao, String deveCorrer, String pelos, String castrado, String raca)
 	{
-		super (nome, idade, emitirSom, quantPatas, periculosidade, alimentacao);
+		super (nome, idade, quantPatas, periculosidade, alimentacao);
 		this.deveCorrer = deveCorrer;
 		this.pelos = pelos;
 		this.castrado = castrado;
@@ -18,7 +18,7 @@ public class Cachorro extends Animal{
 	}
 
 	public String getDeveCorrer() {
-		return deveCorrer;
+		return "Gosta muito de correr";
 	}
 
 	public void setDeveCorrer(String deveCorrer) {
@@ -48,7 +48,10 @@ public class Cachorro extends Animal{
 	public void setRaca(String raca) {
 		this.raca = raca;
 	}
-	
-	
+	@Override
+	public String emitirSom()
+	{
+		return "Au Au... Auuuuuuuuuu";
+	}
 
 }
