@@ -55,7 +55,7 @@ select * from tb_produto where preco > 50.00;
 -- comando select produto com valor entre 3 a 60 --
 select * from tb_produto where preco between 03.00 AND 60.00;
 
--- Buscar personagens com a letra C no nome --
+-- Buscar personagens com a letra B no nome --
 select * from tb_produto where nome Like "%B%";
 
 -- Inner Join --
