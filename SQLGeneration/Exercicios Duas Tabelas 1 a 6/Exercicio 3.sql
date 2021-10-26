@@ -31,7 +31,7 @@ insert into tb_categoria(tipo, somente_com_receita, idade) values ("Cosmetico", 
 insert into tb_categoria(tipo, somente_com_receita, idade) values ("Cosmetico", true, "Infantil");
 insert into tb_categoria(tipo, somente_com_receita, idade) values ("Higiene", true, "Adulto");
 
--- Criando as Pizzas  --
+-- Criando os Produtos  --
 insert into tb_produto(nome, preco, entrega_em_casa, em_promocao, em_estoque, categoria_id)
 values ("Batom Vermelho", 24.99, false, true, true, 3);
 insert into tb_produto(nome, preco, entrega_em_casa, em_promocao, em_estoque, categoria_id)
@@ -55,14 +55,14 @@ select * from tb_produto where preco > 50.00;
 -- comando select produto com valor entre 3 a 60 --
 select * from tb_produto where preco between 03.00 AND 60.00;
 
--- Buscar personagens com a letra B no nome --
+-- Buscar produto com a letra B no nome --
 select * from tb_produto where nome Like "%B%";
 
 -- Inner Join --
 select * from tb_produto inner join tb_categoria
 on tb_produto.categoria_id = tb_categoria.id;
 
--- Select pizzas de um determinado tipo --
+-- Select produto de um determinado tipo --
 select tb_produto.nome, tb_categoria.tipo from tb_produto inner join tb_categoria 
 on tb_produto.categoria_id = tb_categoria.id
 where tb_categoria.id = 1;

@@ -55,7 +55,7 @@ select * from tb_pizza where preco > 45.00;
 -- comando select produto com valor entre 29 a 60 --
 select * from tb_pizza where preco between 29.00 AND 60.00;
 
--- Buscar personagens com a letra C no nome --
+-- Buscar pizza com a letra C no nome --
 select * from tb_pizza where nome Like "%C%";
 
 -- Inner Join --
