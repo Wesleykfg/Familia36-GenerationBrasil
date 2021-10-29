@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity //Entity informa que essa classe irá gerar uma tabela
-@Table(name = "tb_postagens") //Criar tabela e o nome
+@Table(name = "tb_postagens") //Criar tabela e o nome- equivalente ao create table
 public class Postagem {
 	
 	@Id
@@ -22,13 +22,13 @@ public class Postagem {
 	
 	@NotNull(message = "O atributo título é obrigatório!")
 	@Size(min = 5, max = 100, message = "O atributo titulo deve conter no mínimo 5 e no máximo 100 caracteres.")
-	private String titulo;
+	private String titulo; //equivalente ao titulo varchar
 	
 	@NotNull(message = "O atributo texto é obrigatório!")
 	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 510e no máximo 1000 caracteres.")
 	private String texto;
 	
-	@Temporal(TemporalType.TIMESTAMP) //configurando a data para ser timestamp
+	@Temporal(TemporalType.TIMESTAMP) //configurando a data para ser timestamp - equivalente a data timestamp
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
 	
