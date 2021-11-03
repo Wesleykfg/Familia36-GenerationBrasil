@@ -26,6 +26,7 @@ public class PostagemController {
 	@Autowired // injeção de dependencia - transferir a responsabilidade da classe postagem e interface repository para o spring
 	private PostagemRepository postagemRepository;
 	
+	//retorna a lista com todos os recursos que estão no endereço /postagens
 	@GetMapping
 	public ResponseEntity<List<Postagem>> getAll(){
 		//Classe responsavel por responder as requisições
@@ -34,7 +35,7 @@ public class PostagemController {
 	// semelhante a select * from tb_postagem;
 	}
 	
-	
+	//retorna um recurso identificado pelo ID
 	@GetMapping("/{id}") //Metodo Lambida
 	public ResponseEntity<Postagem> getById(@PathVariable long id){
 		return postagemRepository.findById(id)
@@ -51,27 +52,34 @@ public class PostagemController {
 		return ResponseEntity.notFound().build();
 	}*/
 	
+	//retorna recursos que conhentam caracteres informados na busca
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity <List<Postagem>> getByTitulo(@PathVariable String titulo){
 		return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
+	//insere novo recurso
 	@PostMapping
 	public ResponseEntity<Postagem> postPostagem(@RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagemRepository.save(postagem)));
 		
 	}
 	
+	// atualiza um recurso existente
 	@PutMapping
 	public ResponseEntity<Postagem> putPostagem(@RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagemRepository.save(postagem)));
 		
 	}
 	
+	// delete pelo id
 	@DeleteMapping("/{id}")
-	public void deletePostagem (@PathVariable long id) {
-		postagemRepository.deleteById(id);
-		
+	public ResponseEntity<Void> deletaPostagem(@PathVariable long id) {
+	   if (!postagemRepository.existsById(id)) {
+	        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+
+	    }
+	    postagemRepository.deleteById(id);
+	    return ResponseEntity.noContent().build();
 	}
-		
 }

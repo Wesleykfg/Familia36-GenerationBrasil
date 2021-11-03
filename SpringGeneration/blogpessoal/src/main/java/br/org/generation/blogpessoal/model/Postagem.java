@@ -6,11 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity //Entity informa que essa classe irá gerar uma tabela
 @Table(name = "tb_postagens") //Criar tabela e o nome- equivalente ao create table
@@ -31,7 +35,11 @@ public class Postagem {
 	@Temporal(TemporalType.TIMESTAMP) //configurando a data para ser timestamp - equivalente a data timestamp
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Tema tema;
 	
+	//Métodos Get e Set
 	public long getId() {
 		return id;
 	}
