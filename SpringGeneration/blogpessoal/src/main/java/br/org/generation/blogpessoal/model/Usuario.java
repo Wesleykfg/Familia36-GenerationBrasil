@@ -16,6 +16,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity //Entity informa que essa classe irá gerar uma tabela
 @Table(name = "tb_usuario") //Criar tabela e o nome - equivalente ao create table
 public class Usuario {
@@ -27,6 +29,7 @@ public class Usuario {
 	@NotNull(message = "O atributo nome completo é obrigatório!")
 	private String nome; // nome do usuario varchar
 	
+	@ApiModelProperty(example = "email@email.com.br")
 	@Email
 	@NotNull(message = "O atributo usuario é obrigatório!")
 	private String usuario; // email varchar
