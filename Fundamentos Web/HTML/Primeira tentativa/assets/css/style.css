@@ -1,0 +1,137 @@
+/*Estilos da página index.html*/
+/*******Centralizar Texto*******/
+.center{
+    text-align: center;
+}
+
+.justify{
+    text-align: justify;
+}
+
+/*******Ligação e criação do FlexBox*******/
+.container{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/*******Estilo do Menu*******/
+#menu li{
+    display: inline;
+    padding: 15px;
+}
+
+#menu li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#menu li a:hover {
+    color: gray;
+}
+
+/*******Estilizando o Texto*******/
+.p-30{
+    padding: 30px;
+}
+
+/******Estilizando a Imagem*******/
+.br-50{
+    border-radius: 50%;
+}
+
+.wh-300{
+    width: 300px;
+    height: 300px;
+}
+
+/*******Estilizando a Imagem das Redes Sociais*******/
+.tm-social{
+    width: 50px;
+    height: 50px;
+}
+
+/*******Espaço entre o video e o rodapé*******/
+.mb-50{
+    margin-bottom: 50px;
+}
+
+
+/*Estilos da página contato.html*/
+/*******Estilo da margem*******/
+.ml-50{
+    margin-left: 50px;
+}
+
+/*******Ordenando em Coluna*******/
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+/*******Estilizando Formulario de Contatos*******/
+conts{
+    box-sizing: border-box;
+}
+
+form {
+    padding: 1em;
+    background: #f9f9f9;
+    border: 1px solid #c1c1c1;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+form-input {
+    margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid #9c9c9c;
+}
+form-button {
+    background: lightgrey;
+    padding: 0.7em;
+    border: 0;
+}
+form-button:hover {
+    background: gold;
+}
+
+label {
+    text-align: right;
+    display: block;
+    padding: 0.5em 1.5em 0.5em 0;
+}
+
+input {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 0.5rem;
+}
+input:focus {
+    outline: 3px solid gold;
+}
+
+@media (min-width: 400px) {
+    form {
+    overflow: hidden;
+    }
+
+    label {
+    float: center;
+    width: 200px;
+    }
+
+    input {
+    float: center;
+    width: calc(100% - 200px);
+    }
+
+    button {
+    float: right;
+    width: calc(100% - 0px);
+    }
+}
